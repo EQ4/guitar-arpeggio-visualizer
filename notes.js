@@ -13,37 +13,37 @@ GTR.drawStrings = function(){
 	var numStrings = strings.length;
 		currentString = i + 1;
 	for(i = 0; i < numStrings; i++){
-		var position = (i * 50) + 110;
-		paper.rect(100, position, 1200, 5).attr({fill: "#dddddd"}); // high E
+		var position = (i * 50) + 20;
+		paper.rect(50, position, 1200, 5).attr({fill: "#dddddd"}); // high E
 	}
 }
 
 GTR.drawFrets = function(){
 	for(i = 0; i < 24; i++){
 		var currentFret = i + 1;
-		paper.rect((currentFret * 50) + 100, 100, 5, 275).attr({fill: "#000000"}); // 1st fret
+		paper.rect((currentFret * 50) + 50, 10, 5, 275).attr({fill: "#000000"}); // 1st fret
 	}
 }
 
 GTR.drawMarkers = function(){
 	paper.set(
-		paper.circle(225, 237, 10, 10),
-		paper.circle(325, 237, 10, 10),
-		paper.circle(425, 237, 10, 10),
-		paper.circle(525, 237, 10, 10),
-		paper.circle(675, 137, 10, 10),
-		paper.circle(675, 337, 10, 10),
-		paper.circle(825, 237, 10, 10),
-		paper.circle(925, 237, 10, 10),
-		paper.circle(1025, 237, 10, 10),
-		paper.circle(1125, 237, 10, 10),
-		paper.circle(1275, 137, 10, 10),
-		paper.circle(1275, 337, 10, 10)
+		paper.circle(175, 147, 10, 10),
+		paper.circle(275, 147, 10, 10),
+		paper.circle(375, 147, 10, 10),
+		paper.circle(475, 147, 10, 10),
+		paper.circle(625, 47, 10, 10),
+		paper.circle(625, 247, 10, 10),
+		paper.circle(775, 147, 10, 10),
+		paper.circle(875, 147, 10, 10),
+		paper.circle(975, 147, 10, 10),
+		paper.circle(1075, 147, 10, 10),
+		paper.circle(1225, 47, 10, 10),
+		paper.circle(1225, 247, 10, 10)
 	).attr({fill: "#d00"});
 }
 
 GTR.buildGuitar = function(){
-	paper.rect(100, 100, 1200, 275).attr({fill: "#87600C"}); // fretboard
+	paper.rect(50, 10, 1200, 275).attr({fill: "#87600C"}); // fretboard
 	
 	GTR.drawFrets();
 	GTR.drawMarkers();
@@ -64,8 +64,8 @@ window.addEvent('load', function(){
 	    item.each(function(item, index){
 		    if(re.test(item)){
 		    	var position = parseInt(index),
-	    			theString = (i * 50) + 112;
-		    	position = (position * 50) + 75;
+	    			theString = (i * 50) + 22;
+		    	position = (position * 50) + 25;
 		    	paper.circle(position, theString, 15, 15).attr({fill: "#ffffff"});
 		    }
 		});

@@ -57,7 +57,7 @@ window.addEvent('load', function(){
 	/**
 	 * Place Markers
 	 */
-	var re = /G(?!#)|B(?!#)|D(?!#)/g;
+	var re = /G(?!#)|B(?!#)|D(?!#)/;
 	var numStrings = strings.length;
 	var i = 0;
 	strings.each(function(item, index){

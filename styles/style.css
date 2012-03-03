@@ -1,0 +1,346 @@
+/**
+ * @author: Ethan Gardner - http://www.ethangardner.com/
+ * @package: Momentum CSS - v2.0
+ * @license: Creative Commons Attribution 3.0
+*/
+/**
+ *  Add whatever reset you want to use here - 
+ *  I am using Eric Meyer's CSS reset
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  line-height: 1;
+  font-family: inherit;
+  text-align: left;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+a img, :link img, :visited img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+/** End Reset */
+/**
+ * Begin core styling
+ */
+body {
+  background: white;
+  color: black;
+  font: 62.5% cambria, georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 5px; }
+
+h1 {
+  font: 35px/1.143 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+h2 {
+  font: 30px/1.167 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+h3 {
+  font: 25px/1.2 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+h4 {
+  font: 20px/1.25 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+h5 {
+  font: 18px/1.389 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+h6 {
+  font: 16px/1.125 "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif; }
+
+ul, ol, dl, p {
+  font-size: 18px;
+  line-height: 1.389;
+  margin-bottom: 1em; }
+
+dd, dt, li, label {
+  font-size: 18px;
+  line-height: 1.389; }
+
+dt {
+  font-weight: 700; }
+
+dd {
+  padding: 5px 0 5px 30px; }
+
+a {
+  color: blue; }
+  a:hover {
+    color: #0000cc;
+    text-decoration: underline; }
+  a:visited {
+    color: #660088; }
+  a:focus {
+    text-shadow: 0 0 5px black; }
+
+address, div {
+  font-size: 18px;
+  line-height: 1.389; }
+
+abbr {
+  border-bottom: 1px dotted #e6e6ff;
+  cursor: help;
+  letter-spacing: 1px; }
+
+b, strong, th {
+  font-weight: 700; }
+
+i, em {
+  font-style: italic; }
+
+sub, sup, small {
+  font-size: .65em; }
+
+sup {
+  line-height: 0;
+  vertical-align: super; }
+
+sub {
+  line-height: 0;
+  vertical-align: sub; }
+
+code, pre {
+  font-family: consolas, 'lucida console', 'courier new', monospace;
+  font-size: 18px; }
+
+blockquote {
+  background: #f6f6ff;
+  border-left: 3px solid #e6e6ff;
+  padding: 5px; }
+
+/**
+ * Table
+ */
+table {
+  font-size: 18px;
+  line-height: 1.389;
+  margin-bottom: 1.5em;
+  width: 100%; }
+
+tr {
+  border-bottom: 1px solid #e6e6ff; }
+
+td, th {
+  padding: 5px;
+  vertical-align: top; }
+
+caption {
+  font-weight: 700;
+  padding: 10px 5px;
+  text-align: center; }
+
+thead th {
+  background-color: #0b1272;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0b1272), to(#151a46));
+  background-image: -webkit-linear-gradient(top, #0b1272, #151a46);
+  background-image: -moz-linear-gradient(top, #0b1272, #151a46);
+  background-image: -ms-linear-gradient(top, #0b1272, #151a46);
+  background-image: -o-linear-gradient(top, #0b1272, #151a46);
+  background-image: linear-gradient(top, #0b1272, #151a46);
+  color: white;
+  border-bottom: 3px solid #6666ff; }
+
+tbody th {
+  background: #e6e6ff;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff; }
+tbody tr:nth-child(odd) {
+  background: #f6f6ff; }
+
+tfoot td {
+  text-align: center; }
+
+/**
+ * Forms
+ */
+form {
+  padding: 5px 0;
+  -moz-column-count: 2; }
+
+fieldset {
+  border: 1px solid #e6e6ff;
+  padding: 5px;
+  margin-bottom: 18px; }
+
+legend {
+  font-size: 18px;
+  padding: 5px; }
+
+button, .btn, input[type="submit"], input[type="reset"] {
+  background-color: #0b1272;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0b1272), to(#151a46));
+  background-image: -webkit-linear-gradient(top, #0b1272, #151a46);
+  background-image: -moz-linear-gradient(top, #0b1272, #151a46);
+  background-image: -ms-linear-gradient(top, #0b1272, #151a46);
+  background-image: -o-linear-gradient(top, #0b1272, #151a46);
+  background-image: linear-gradient(top, #0b1272, #151a46);
+  color: white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px black;
+  text-shadow: 0 0 5px black;
+  border: 1px solid #e6e6ff;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: cambria, georgia, "Times New Roman", Times, serif;
+  color: white;
+  padding: 10px; }
+
+.error {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ad1c0f;
+  background: #ffbcaf;
+  color: #ad1c0f;
+  padding: 5px; }
+
+/**
+ * Utility Classes
+ */
+.block {
+  display: block; }
+
+.clearL {
+  clear: left; }
+
+.clearR {
+  clear: right; }
+
+.clear {
+  clear: both; }
+
+.floatL {
+  float: left; }
+
+.floatR {
+  float: right; }
+
+.floatN {
+  float: none; }
+
+.hide {
+  display: none;
+  visibility: hidden; }
+
+.inline {
+  display: inline; }
+
+.center {
+  text-align: center; }
+
+/* lists */
+.circle {
+  list-style: circle; }
+
+ol, .decimal {
+  list-style: decimal outside;
+  padding-left: 30px; }
+
+ul, .disc {
+  list-style: disc outside;
+  padding-left: 30px; }
+
+.none {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+
+.square {
+  list-style: square; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.container {
+  text-align: center; }
+
+.content {
+  margin: 0 auto;
+  text-align: left; }
+
+/**
+ * Import your print rules at the very bottom
+ * so you can override the other styles as necessary
+ */
+/**
+ *  Print styles
+ */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font: 10pt/1.5 cambria, georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0; }
+
+  img {
+    border: 0;
+    display: block; }
+
+  /* base heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-weight: 700;
+    margin: 0; }
+
+  h1 {
+    font-size: 20pt; }
+
+  h2 {
+    font-size: 18pt; }
+
+  h3 {
+    font-size: 16pt; }
+
+  h4 {
+    font-size: 14pt; }
+
+  h5, h6 {
+    letter-spacing: .5pt; }
+
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: black;
+    text-decoration: none; }
+
+  pre {
+    height: auto; }
+
+  blockquote {
+    border-left: 1pt solid #808080;
+    padding-left: 3pt; }
+
+  a {
+    color: blue;
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ") ";
+    font-size: 90%; }
+
+  .hide {
+    display: none;
+    visibility: hidden !important; } }

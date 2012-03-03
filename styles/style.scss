@@ -1,0 +1,280 @@
+/**
+ * @author: Ethan Gardner - http://www.ethangardner.com/
+ * @package: Momentum CSS - v2.0
+ * @license: Creative Commons Attribution 3.0
+*/
+
+//
+// Add your reset at the very top of this file.
+// The reset is defined in _reset.scss 
+//
+@import 'reset';
+/** End Reset */
+
+
+//
+// SASS definitions begin here
+//
+$headingFont: "Franklin Gothic Medium", Tahoma, "Helvetica Neue", Arial, sans-serif;
+$contentFont: cambria, georgia, "Times New Roman", Times, serif;
+$baseFontSize: 18px;
+$baseLeading: 1.3889;
+
+//: Colors
+$mainBgColor: #fff;
+$mainTextColor: #000;
+$reverseColor: #fff;
+
+$linkColor: #00f;
+$linkHoverColor: #00c;
+$linkVisitedColor: #608;
+$accentColor1: #66f;
+$mutedColor1: $accentColor1 + #808080;
+$mutedColor2: $accentColor1 + #909090;
+$darkerColor1: $accentColor1 + #707070;
+$darkerColor2: $accentColor1 + #606060;
+$errorColor: $mainTextColor + #ad1c0f;
+$errorBgColor: $errorColor + #a0a0a0;
+
+$baseBg1: #0B1272;
+$baseBg2: #151A46;
+
+//: Dimensions
+$destopWidth: 960px;
+$padding: 5px;
+
+//: Mixins
+@mixin defaultFont {
+  font-size:$baseFontSize;
+  line-height:$baseLeading;
+}
+
+@mixin gradient($baseBg1, $baseBg2) {
+  background-color:$baseBg1;
+  background-image:-webkit-gradient(linear, left top, left bottom, from($baseBg1), to($baseBg2)); 
+  background-image:-webkit-linear-gradient(top, $baseBg1, $baseBg2); 
+  background-image:-moz-linear-gradient(top, $baseBg1, $baseBg2); 
+  background-image:-ms-linear-gradient(top, $baseBg1, $baseBg2); 
+  background-image:-o-linear-gradient(top, $baseBg1, $baseBg2); 
+  background-image:linear-gradient(top, $baseBg1, $baseBg2);
+  color:$reverseColor;
+}
+
+@mixin borderRadius {
+  -moz-border-radius:$padding;
+  -webkit-border-radius:$padding;
+  border-radius:$padding;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+@mixin textShadow {
+  text-shadow: 0 0 $padding #000;
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 0px 0px $padding #000; 
+  -moz-box-shadow: 0px 0px $padding #000; 
+  box-shadow: 0px 0px $padding #000; 
+}
+
+/**
+ * Begin core styling
+ */
+body {
+  background:$mainBgColor;
+  color:$mainTextColor;
+  font:62.5% $contentFont; // sets font to 10px
+  text-align:center;
+  padding:$padding;
+}
+
+h1 {font:35px/1.1429 $headingFont;}
+h2 {font:30px/1.16667 $headingFont;}
+h3 {font:25px/1.2 $headingFont;}
+h4 {font:20px/1.25 $headingFont;}
+h5 {font:18px/1.3889 $headingFont;}
+h6 {font:16px/1.125 $headingFont;}
+
+ul, ol, dl, p {
+  font-size:$baseFontSize;
+  line-height:$baseLeading;
+  margin-bottom:1em;
+}
+
+dd, dt, li, label {
+   @include defaultFont;
+}
+
+dt {font-weight:700;}
+dd {padding:$padding 0 $padding ($padding * 6);}
+
+a {
+  color:$linkColor;
+  &:hover {
+    color:$linkHoverColor;
+    text-decoration:underline;
+  }
+  &:visited {
+    color:$linkVisitedColor;
+  }
+  &:focus {
+    @include textShadow;
+  }
+}
+
+address, div {@include defaultFont;}
+abbr {border-bottom:1px dotted $mutedColor1; cursor:help; letter-spacing:1px;}
+
+b, strong, th {font-weight:700;}
+i, em {font-style:italic;}
+sub, sup, small {font-size:.65em;}
+sup {
+  line-height:0;
+  vertical-align: super; 
+}
+
+sub {
+  line-height:0;
+  vertical-align: sub; 
+}  
+
+code, pre {
+  font-family:consolas, 'lucida console', 'courier new', monospace;
+  font-size:$baseFontSize;
+}
+
+blockquote {
+  background: $mutedColor2;
+  border-left: 3px solid $mutedColor1; 
+  padding: $padding;
+}
+
+/**
+ * Table
+ */
+table {
+  @include defaultFont;
+  margin-bottom:1.5em;
+  width:100%;
+}
+
+tr {
+  border-bottom: 1px solid $mutedColor1;
+}
+
+td, th {
+  padding: $padding;
+  vertical-align: top;
+}
+
+caption {
+  font-weight:700;
+  padding:($padding * 2) $padding;
+  text-align:center;
+}
+
+thead th {
+  @include gradient;
+  border-bottom:3px solid $accentColor1;
+}
+
+tbody {
+  th {
+    background:$mutedColor1;
+    border: {
+      left:1px solid #fff;
+      top:1px solid #fff;
+    }
+  }
+  tr:nth-child(odd){
+    background:$mutedColor2;
+  }
+}
+
+tfoot td {
+  text-align:center;
+}
+
+/**
+ * Forms
+ */
+form {
+  padding: $padding 0;
+  -moz-column-count:2;
+}
+
+fieldset {
+  border:1px solid $mutedColor1;
+  padding: $padding;
+  margin-bottom: $baseFontSize;
+}
+
+legend {
+  font-size: $baseFontSize;
+  padding: $padding;
+}
+
+button, .btn, input[type="submit"], input[type="reset"] {
+  @include gradient;
+  @include borderRadius;
+  @include boxShadow;
+  @include textShadow;
+  border: 1px solid $mutedColor1;
+  cursor:pointer;
+  font-size: 14px;
+  font-family: $contentFont;
+  color: $reverseColor;
+  padding: $padding * 2;
+}
+
+.error {
+  @include borderRadius;
+  border:1px solid $errorColor;
+  background:$errorBgColor;
+  color:$errorColor;
+  padding:$padding;
+}
+
+/**
+ * Utility Classes
+ */
+.block  {display:block;}
+.clearL {clear:left;}
+.clearR {clear:right;}
+.clear  {clear:both;}
+.floatL {float:left;}
+.floatR {float:right;}
+.floatN {float:none;}
+.hide   {display:none; visibility:hidden;}
+.inline {display:inline;}
+.center {text-align:center;}
+
+/* lists */
+.circle {list-style:circle;}
+ol, .decimal {list-style:decimal outside; padding-left:30px;}
+ul, .disc {list-style:disc outside; padding-left:30px;}
+.none {list-style:none;margin-left:0;padding-left:0;}
+.square {list-style:square;}
+
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+
+.container {
+  text-align:center;
+}
+
+.content {
+  margin:0 auto;
+  text-align:left;
+}
+
+/**
+ * Import your print rules at the very bottom
+ * so you can override the other styles as necessary
+ */
+@import 'print';

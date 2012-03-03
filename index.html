@@ -2,15 +2,27 @@
 <html>
 <head>
 	<title>Guitar Arpeggio Builder</title>
-	<!--<link rel="stylesheet" href="style.css" type="text/css" media="screen" />-->
+	<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
 </head>
 <body>
 	<h1 contenteditable="true">Title</h1>
-	<div id="fretboard">
-		
-	</div>
+	<div id="fretboard"></div>
+	<form>
+		<p><label><input type="checkbox" name="notes" value="A"> A</label></p>
+		<p><label><input type="checkbox" name="notes" value="A#"> A#/Bb</label></p>
+		<p><label><input type="checkbox" name="notes" value="B"> B</label></p>
+		<p><label><input type="checkbox" name="notes" value="C"> C</label></p>
+		<p><label><input type="checkbox" name="notes" value="C#"> C#/Db</label></p>
+		<p><label><input type="checkbox" name="notes" value="D"> D</label></p>
+		<p><label><input type="checkbox" name="notes" value="D#"> D#/Eb</label></p>
+		<p><label><input type="checkbox" name="notes" value="E"> E</label></p>
+		<p><label><input type="checkbox" name="notes" value="F"> F</label></p>
+		<p><label><input type="checkbox" name="notes" value="F#"> F#/Gb</label></p>
+		<p><label><input type="checkbox" name="notes" value="G"> G</label></p>
+		<p><label><input type="checkbox" name="notes" value="G#"> G#/Ab</label></p>
+	</form>
 <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js"></script>
 <script src="http://yandex.st/raphael/2.0.1/raphael.min.js"></script>
-<script src="notes.js"></script>
+<script src="scripts/notes.js"></script>
 </body>	
 </html>

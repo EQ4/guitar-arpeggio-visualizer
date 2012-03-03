@@ -5,7 +5,7 @@ var G = ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#',  'E', 'F', 'F#', 'G', 
 var B = ['B', 'C', 'C#', 'D', 'D#',  'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#',  'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 var strings = [E, B, G, D, A, E];
 
-var paper = new Raphael(document.id("fretboard"), 1300, 400);
+var paper = new Raphael(document.id("fretboard"), 1300, 300);
 var GTR = {};
 
 

@@ -54,23 +54,31 @@ window.addEvent('load', function(){
 	
 	GTR.buildGuitar();
 	
+	var numStrings = strings.length;
+	//var re = /A(?!#)|C(?!#)|E(?!#)/;
+	var st = paper.set();
 	/**
 	 * Place Markers
 	 */
-	var re = /G(?!#)|B(?!#)|D(?!#)/;
-	var numStrings = strings.length;
-	var i = 0;
-	strings.each(function(item, index){
-	    item.each(function(item, index){
-		    if(re.test(item)){
-		    	var position = parseInt(index),
-	    			theString = (i * 50) + 22;
-		    	position = (position * 50) + 25;
-		    	paper.circle(position, theString, 15, 15).attr({fill: "#ffffff"});
-		    }
-		});
-		i++;
-	});
+	$('diagram').addEvent('change', function(){
+	    var i = 0;
+	    st.remove();
+	    $$('input[name=notes]:checked').map(function(el){
+			strings.each(function(item, index){
+			    item.each(function(item, index){
+			    	var re = el.value;
+			    	re = '/' + re + '(?!#)/';
+			    	console.log(re);
+				    if(re.test(item)){
+				    	var position = parseInt(index),
+			    			theString = (i * 50) + 22;
+				    	position = (position * 50) + 25;
+				    	st.push(paper.circle(position, theString, 15, 15).attr({fill: "#ffffff"}));
+				    }
+				});
+				i++;
+			});
+	    });
 
-	
+	});
 });

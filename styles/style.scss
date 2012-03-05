@@ -225,6 +225,11 @@ button, .btn, input[type="submit"], input[type="reset"] {
   font-family: $contentFont;
   color: $reverseColor;
   padding: $padding * 2;
+  &:hover {
+    @include gradient(#333, #000);
+    color: $reverseColor;
+    text-decoration:none;
+  }
 }
 
 .error {

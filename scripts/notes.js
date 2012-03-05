@@ -54,22 +54,30 @@ window.addEvent('load', function(){
 	
 	GTR.buildGuitar();
 	
-	var numStrings = strings.length;
-	//var re = /A(?!#)|C(?!#)|E(?!#)/;
-	var st = paper.set();
+	var numStrings = strings.length,
+		st = paper.set();
+
 	/**
 	 * Place Markers
 	 */
-	$('diagram').addEvent('change', function(){
-	    var i = 0;
+	$('draw').addEvent('click', function(){
+		var i = 0,
+			markers = [],
+	    	checked = $$('input[name=notes]:checked');
+	    	
 	    st.remove();
-	    $$('input[name=notes]:checked').map(function(el){
-			strings.each(function(item, index){
+	    
+	    if(checked.length !== 0){
+			checked.map(function(el){
+				markers.push(el.value + '(?!#)');
+		    });
+
+			markers = markers.join("|");
+			markers = new RegExp(markers);
+
+		    strings.each(function(item, index){
 			    item.each(function(item, index){
-			    	var re = el.value;
-			    	re = '/' + re + '(?!#)/';
-			    	console.log(re);
-				    if(re.test(item)){
+				    if(markers.test(item)){
 				    	var position = parseInt(index),
 			    			theString = (i * 50) + 22;
 				    	position = (position * 50) + 25;
@@ -78,7 +86,6 @@ window.addEvent('load', function(){
 				});
 				i++;
 			});
-	    });
-
+	    } 
 	});
 });

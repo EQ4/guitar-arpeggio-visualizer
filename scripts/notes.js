@@ -65,7 +65,7 @@ window.addEvent('load', function(){
 			markers = [],
 	    	checked = $$('input[name=notes]:checked');
 	    	
-	    st.remove();
+		st.remove();
 	    
 	    if(checked.length !== 0){
 			checked.map(function(el){
@@ -87,5 +87,10 @@ window.addEvent('load', function(){
 				i++;
 			});
 	    } 
+	});
+	
+	$('reset').addEvent('click', function(){
+		st.remove();
+		$$('input[name=notes]:checked').set('checked', false);
 	});
 });

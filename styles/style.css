@@ -74,12 +74,12 @@ dd {
   padding: 5px 0 5px 30px; }
 
 a {
-  color: blue; }
+  color: #0b1272; }
   a:hover {
-    color: #0000cc;
+    color: black;
     text-decoration: underline; }
   a:visited {
-    color: #660088; }
+    color: #0b1272; }
   a:focus {
     text-shadow: 0 0 5px black; }
 

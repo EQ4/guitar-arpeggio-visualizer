@@ -36,7 +36,7 @@ GTR.drawStrings = function(){
 		var position = (i * 50) + 20;
 		paper.rect(50, position, 1200, 5).attr({fill: "#dddddd"}); // high E
 	}
-}
+};
 
 /**
  * Similar to the drawStrings function, this calculates the position 
@@ -47,7 +47,7 @@ GTR.drawFrets = function(){
 		var currentFret = i + 1;
 		paper.rect((currentFret * 50) + 50, 10, 5, 275).attr({fill: "#000000"}); // 1st fret
 	}
-}
+};
 
 /**
  * Puts the position markers on the neck at the specified location
@@ -67,7 +67,7 @@ GTR.drawMarkers = function(){
 		paper.circle(1225, 47, 10, 10),
 		paper.circle(1225, 247, 10, 10)
 	).attr({fill: "#d00"});
-}
+};
 
 /**
  * Draws all the components of the guitar in the 
@@ -79,7 +79,7 @@ GTR.buildGuitar = function(){
 	GTR.drawFrets();
 	GTR.drawMarkers();
 	GTR.drawStrings();
-}
+};
 
 window.addEvent('load', function(){
 	
@@ -94,14 +94,14 @@ window.addEvent('load', function(){
 	$('draw').addEvent('click', function(){
 		var i = 0,
 			markers = [],
-	    	checked = $$('input[name=notes]:checked');
-	    
+			checked = $$('input[name=notes]:checked');
+
 		st.remove(); // remove the notes in the set
-	    
-	    if(checked.length !== 0){
+
+		if(checked.length !== 0){
 			checked.map(function(el){
 				markers.push(el.value + '(?!#)'); // loop over all checked notes and push into an array
-		    });
+			});
 
 			markers = markers.join("|"); // convert array to string for use in regex
 			markers = new RegExp(markers);
@@ -111,18 +111,18 @@ window.addEvent('load', function(){
 			 * on each string. If a match to the regex is detected,
 			 * plot the note on the guitar for each string.
 			 */
-		    GTR.strings.each(function(item, index){
-			    item.each(function(item, index){
-				    if(markers.test(item)){
-				    	var position = parseInt(index),
-			    			theString = (i * 50) + 22;
-				    	position = (position * 50) + 25;
-				    	st.push(paper.circle(position, theString, 15, 15).attr({fill: "#ffffff"}));
-				    }
+			GTR.strings.each(function(item, index){
+				item.each(function(item, index){
+					if(markers.test(item)){
+						var position = parseInt(index, 10),
+							theString = (i * 50) + 22;
+						position = (position * 50) + 25;
+						st.push(paper.circle(position, theString, 15, 15).attr({fill: "#ffffff"}));
+					}
 				});
 				i++;
 			});
-	    } 
+		} 
 	});
 	
 	/**
